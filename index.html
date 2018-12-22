@@ -2,39 +2,91 @@
 <html>
 <head>
 	<title>GAME</title>
-	
+	<style type="text/css">
+		#form1{
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+	</style>
 </head>
 <body onload="Alert()">
-	
-	<script type="text/javascript">
+	<h1>Tic Tac Toe</h1>
+	<div id="form1">
 		
+			<input type="text" id="t1" size="1">
+			<input id="1" type="button" size="1" onclick= "check('t1',0,0);">
+			<input type="text" id="t2" size="1">
+			<input id="2" type="button" size="1" onclick= "check('t2',0,1);">
+			<input type="text" id="t3" size="1">
+			<input id="3" type="button" size="1" onclick= "check('t3',0,2);"><br>
+			<input type="text" id="t4" size="1">
+			<input id="4" type="button" size="1" onclick= "check('t4',1,0);">
+			<input type="text" id="t5" size="1">
+			<input id="5" type="button" size="1" onclick= "check('t5',1,1);">
+			<input type="text" id="t6" size="1">
+			<input id="6" type="button" size="1" onclick= "check('t6',1,2);"><br>
+			<input type="text" id="t7" size="1">
+			<input id="7" type="button" size="1" onclick= "check('t7',2,0);">
+			<input type="text" id="t8" size="1">
+			<input id="8" type="button" size="1" onclick= "check('t8',2,1);">
+			<input type="text" id="t9" size="1">
+			<input id="9" type="button" size="1" onclick= "check('t9',2,2);">
+		
+	</div>
+	<script type="text/javascript">
+		var Col = [[100, 100, 100]
+				   [100, 100, 100]
+				   [100, 100, 100]];
+		var t = 1, n = 0;
 		function Alert()
 		{
 			alert("Let's Play");
-			
+			document.getElementById("t1").value="";
+			document.getElementById("t2").value="";
+			document.getElementById("t3").value="";
+		   	document.getElementById("t4").value="";
+			document.getElementById("t5").value="";
+			document.getElementById("t6").value="";
+			document.getElementById("t7").value="";
+			document.getElementById("t8").value="";
+			document.getElementById("t9").value="";
 		}
 
-		function check(a,b)
+		/*function print(s)
 		{
-			if((a+b)%2 == 0)
+			if(n%2 == 0)
 			{
-				document.getElementById("t1").value="X";
+				document.getElementById(s).value="X";
 			}
 			else
 			{
-				document.getElementById("t1").value="O";
+				document.getElementById(s).value="O";
 			}
+			n++;
+		}*/
+
+		function check(s,a,b)
+		{
 			if(Col[a][b]!=100){
 				alert("No cheating !!!!");
 				return;
 			}
+			if(n%2 == 0)
+			{
+				document.getElementById(s).value="X";
+			}
+			else
+			{
+				document.getElementById(s).value="O";
+			}
+			n++;
 			Col[a][b]=n%2;
 			checkWin();
 		}
-
 		/*function checkWin()
 		{
-			var sum1; var sum2; var sum3; var sum4;
+			var sum1, sum2, sum3, sum4;
 			for (var i = 0; i < 3; i++) {
 				for (var j = 0; j < 3; j++) {
 					sum1 + = Col[i][j];
