@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GAME</title>
+	
+</head>
+<body onload="Alert()">
+	
+	<script type="text/javascript">
+		
+		function Alert()
+		{
+			alert("Let's Play");
+			
+		}
+
+		function check(a,b)
+		{
+			if((a+b)%2 == 0)
+			{
+				document.getElementById("t1").value="X";
+			}
+			else
+			{
+				document.getElementById("t1").value="O";
+			}
+			if(Col[a][b]!=100){
+				alert("No cheating !!!!");
+				return;
+			}
+			Col[a][b]=n%2;
+			checkWin();
+		}
+
+		/*function checkWin()
+		{
+			var sum1; var sum2; var sum3; var sum4;
+			for (var i = 0; i < 3; i++) {
+				for (var j = 0; j < 3; j++) {
+					sum1 + = Col[i][j];
+					sum2 + = Col[j][i];
+				}
+				if(sum1 == 3 || sum2 == 3)
+				{
+					alert("Player B wins");
+					return;
+				}
+				if(sum2 == 0 || sum2 == 0)
+				{
+					alert("Player A wins");
+					return;
+				}
+				sum3 + = Col[i][i];
+				sum4 + = Col[i][2-i];
+			}
+			if(sum3 == 0 || sum4 == 0)
+			{
+				alert("Player A wins");
+				return;
+			}
+			if(sum3 == 3 || sum4 == 3)
+			{
+				alert("Player B wins");
+				return;
+			}
+		}*/
+	</script>
+</body>
+</html>
